@@ -45,7 +45,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="sticky top-0 z-50 mb-0 w-full bg-background">
+      <div className="sticky top-0 z-50 mb-0 mb-6 w-full bg-background">
         <div className="pad-x flex justify-between gap-8 bg-background py-3 md:gap-12">
           <NavL />
           <NavSearch />
