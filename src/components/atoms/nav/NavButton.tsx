@@ -2,9 +2,9 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { ChevronDown, LayoutDashboard, LogOut, Menu } from "lucide-react";
-import Image from "next/image";
 import { Link as NavbarLink } from "@/components/organisms/navbar/Navbar";
 import NavLink from "./NavLink";
+import Image from "next/image";
 
 interface NavHeaderProps {
   links: NavbarLink[];
