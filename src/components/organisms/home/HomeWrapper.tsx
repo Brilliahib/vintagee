@@ -8,7 +8,7 @@ export default function HomeWrapper() {
     <>
       <HomeWallpaper />
       <PageContainer>
-        <div className="space-y-6">
+        <div className="space-y-6 md:space-y-12">
           <BannerHome />
           <HomeAllProduct />
         </div>

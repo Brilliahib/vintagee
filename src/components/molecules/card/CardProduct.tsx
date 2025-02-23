@@ -18,6 +18,7 @@ export default function CardProduct() {
           <p className="text-sm font-medium md:text-base">
             Jeans jacquard baggy
           </p>
+          <span className="text-sm text-muted-foreground">Size L</span>
           <h1 className="font-bold">Rp 150.000</h1>
         </div>
       </CardContent>
