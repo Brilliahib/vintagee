@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: var(--font-jakarta-sans);
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -111,5 +115,14 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .pad-x {
+    @apply mx-auto max-w-[1280px] px-4 md:px-[4%];
+  }
+  .pad-x-xl {
+    @apply mx-auto max-w-[1280px] px-4 md:px-[4%];
   }
 }
