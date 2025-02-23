@@ -15,12 +15,12 @@ export default function BannerHome() {
     Autoplay({ delay: 8000, stopOnInteraction: true }),
   );
   return (
-    <>
+    <div className="hidden md:flex">
       <Carousel plugins={[plugin.current]}>
         <CarouselContent>
           <CarouselItem>
             <Image
-              src={"/images/banner/banner-example.jpg"}
+              src={"/images/banner/banner-example.png"}
               alt="Banner"
               width={13120}
               height={3800}
@@ -29,7 +29,7 @@ export default function BannerHome() {
           </CarouselItem>
           <CarouselItem>
             <Image
-              src={"/images/banner/banner-example.jpg"}
+              src={"/images/banner/banner-example.png"}
               alt="Banner"
               width={13120}
               height={3800}
@@ -38,6 +38,6 @@ export default function BannerHome() {
           </CarouselItem>
         </CarouselContent>
       </Carousel>
-    </>
+    </div>
   );
 }

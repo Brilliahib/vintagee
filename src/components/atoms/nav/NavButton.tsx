@@ -30,7 +30,7 @@ export default function NavButton({ links }: NavHeaderProps) {
             <Button
               variant="outline"
               size="icon"
-              className="w-full shrink-0 border-0 bg-white md:hidden"
+              className="w-full shrink-0 border-0 bg-white shadow-none md:hidden"
             >
               <Menu
                 style={{ height: "20px", width: "20px" }}
