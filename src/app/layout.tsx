@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Figtree } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/organisms/navbar/Navbar";
 import Footer from "@/components/atoms/footer/Footer";
+import GlobalProvider from "@/components/organisms/GlobalProvider";
 
-const jakartaSans = Plus_Jakarta_Sans({
-  variable: "--font-jakarta-sans",
+const figtree = Figtree({
+  variable: "--font-figtree",
   subsets: ["latin"],
 });
 
@@ -21,10 +22,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${jakartaSans.variable} antialiased`}>
-        <Navbar />
-        {children}
-        <Footer />
+      <body className={`${figtree.variable} antialiased`}>
+        <GlobalProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </GlobalProvider>
       </body>
     </html>
   );
