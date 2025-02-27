@@ -16,6 +16,7 @@ export interface Product {
 }
 
 export interface Owner {
+  id: string;
   name: string;
   image_url: string;
 }

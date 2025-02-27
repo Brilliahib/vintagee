@@ -1,19 +1,19 @@
 import Footer from "@/components/atoms/footer/Footer";
 import Navbar from "@/components/organisms/navbar/Navbar";
-import ProductDetailWrapper from "@/components/organisms/product/ProductWrapperContent";
+import UserProductWrapper from "@/components/organisms/user/UserProductWrapper";
 
-interface ProductDetailPageParams {
+interface DetailUserProductPageParams {
   params: Promise<{ id: string }>;
 }
 
-export default async function ProductDetailPage({
+export default async function DetailUserProductPage({
   params,
-}: ProductDetailPageParams) {
+}: DetailUserProductPageParams) {
   const { id } = await params;
   return (
     <>
       <Navbar />
-      <ProductDetailWrapper id={id} />
+      <UserProductWrapper id={id} />
       <Footer />
     </>
   );
