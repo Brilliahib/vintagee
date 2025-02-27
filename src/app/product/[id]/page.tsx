@@ -1,9 +1,12 @@
 import ProductDetailWrapper from "@/components/organisms/product/ProductWrapperContent";
 
 interface ProductDetailPageParams {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
-export default function ProductDetailPage({ params }: ProductDetailPageParams) {
-  return <ProductDetailWrapper id={params.id} />;
+export default async function ProductDetailPage({
+  params,
+}: ProductDetailPageParams) {
+  const { id } = await params;
+  return <ProductDetailWrapper id={id} />;
 }
