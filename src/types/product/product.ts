@@ -8,6 +8,7 @@ export interface Product {
   size: string;
   description: string;
   condition: string;
+  brand: string;
   created_at: Date;
   updated_at: Date;
   category: CategoryProduct;
