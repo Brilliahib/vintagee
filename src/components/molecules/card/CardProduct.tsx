@@ -3,6 +3,7 @@ import { Product } from "@/types/product/product";
 import Image from "next/image";
 import Link from "next/link";
 import SkeletonCardProduct from "../skeleton/SkeletonCardProduct";
+import { formatPrice } from "@/utils/format-price";
 
 interface ProductProps {
   product?: Product;
@@ -32,7 +33,7 @@ export default function CardProduct({ product, isLoading }: ProductProps) {
             <span className="text-sm text-muted-foreground">
               Size {product!.size}
             </span>
-            <h1 className="font-bold">Rp {product!.price.toLocaleString()}</h1>
+            <h1 className="font-bold">{formatPrice(product!.price)}</h1>
           </div>
         </CardContent>
       </Card>

@@ -14,6 +14,8 @@ import { format } from "date-fns";
 import { id } from "date-fns/locale";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { generateFallbackFromName } from "@/utils/generate-name";
+import Link from "next/link";
+import { formatPrice } from "@/utils/format-price";
 
 interface CardDetailProductProps {
   data?: Product;
@@ -66,7 +68,7 @@ export default function CardDetailProduct({
                 <Skeleton className="h-6 w-20 rounded-md" />
               ) : (
                 <h1 className="text-xl font-bold">
-                  Rp {data!.price.toLocaleString()}
+                  {formatPrice(data!.price)}
                 </h1>
               )}
               <div className="space-y-2">
@@ -169,7 +171,13 @@ export default function CardDetailProduct({
                   <Skeleton className="h-10 w-full rounded-md" />
                 </>
               ) : (
-                <Button variant={"outline"}>Kunjungi Akun Penjual</Button>
+                <>
+                  <Link href={`/user/${data?.user.id}`}>
+                    <Button variant={"outline"} className="w-full">
+                      Kunjungi Akun Penjual
+                    </Button>
+                  </Link>
+                </>
               )}
             </div>
           </CardContent>
