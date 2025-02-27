@@ -15,8 +15,6 @@ export default function UserProductWrapper({ id }: UserProductWrapperProps) {
   const { data, isPending } = useGetDetailUser(id);
   const { data: product, isPending: isFetching } = useGetDetailUserProduct(id);
 
-  console.log("Product Data:", product);
-
   return (
     <>
       <main className="pt-8">

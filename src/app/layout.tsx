@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/organisms/navbar/Navbar";
-import Footer from "@/components/atoms/footer/Footer";
 import GlobalProvider from "@/components/organisms/GlobalProvider";
 
 const figtree = Figtree({
@@ -19,15 +17,15 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
+  hideLayout?: boolean;
 }>) {
   return (
     <html lang="en">
-      <body className={`${figtree.variable} antialiased`}>
-        <GlobalProvider>
-          <Navbar />
-          {children}
-          <Footer />
-        </GlobalProvider>
+      <body
+        className={`${figtree.variable} antialiased`}
+        suppressHydrationWarning={true}
+      >
+        <GlobalProvider>{children}</GlobalProvider>
       </body>
     </html>
   );
