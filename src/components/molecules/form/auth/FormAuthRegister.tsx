@@ -28,13 +28,6 @@ import {
   RegisterType,
 } from "@/validators/auth/register-validator";
 import { useRegister } from "@/http/auth/register";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { toast } from "sonner";
 
 export default function FormAuthRegister() {
@@ -44,8 +37,7 @@ export default function FormAuthRegister() {
       name: "",
       email: "",
       password: "",
-      password_confirmation: "",
-      role: "user",
+      passwordConfirmation: "",
     },
     mode: "onChange",
   });
@@ -152,31 +144,6 @@ export default function FormAuthRegister() {
                 />
                 <FormField
                   control={form.control}
-                  name="role"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Role</FormLabel>
-                      <FormControl>
-                        <Select
-                          onValueChange={field.onChange}
-                          defaultValue={field.value}
-                        >
-                          <SelectTrigger>
-                            <SelectValue placeholder="Pilih role" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="user">User</SelectItem>
-                            <SelectItem value="daycare">Daycare</SelectItem>
-                            <SelectItem value="nannies">Nannies</SelectItem>
-                          </SelectContent>
-                        </Select>
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
                   name="password"
                   render={({ field }) => (
                     <FormItem>
@@ -195,7 +162,7 @@ export default function FormAuthRegister() {
                 />
                 <FormField
                   control={form.control}
-                  name="password_confirmation"
+                  name="passwordConfirmation"
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>Konfirmasi Password</FormLabel>
