@@ -17,7 +17,6 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-  hideLayout?: boolean;
 }>) {
   return (
     <html lang="en">
