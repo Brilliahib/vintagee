@@ -26,6 +26,7 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar";
 import { Session } from "next-auth";
+import { generateFallbackFromName } from "@/utils/generate-name";
 
 interface NavUserProps {
   session: Session;
@@ -48,7 +49,9 @@ export function NavUser({ session }: NavUserProps) {
                   src={session?.user.image_url}
                   alt={session?.user.name}
                 />
-                <AvatarFallback className="rounded-lg">CN</AvatarFallback>
+                <AvatarFallback className="rounded-lg">
+                  {generateFallbackFromName(session?.user.name)}
+                </AvatarFallback>
               </Avatar>
               <div className="grid flex-1 text-left text-sm leading-tight">
                 <span className="truncate font-semibold">
@@ -72,7 +75,9 @@ export function NavUser({ session }: NavUserProps) {
                     src={session?.user.image_url}
                     alt={session?.user.name}
                   />
-                  <AvatarFallback className="rounded-lg">CN</AvatarFallback>
+                  <AvatarFallback className="rounded-lg">
+                    {generateFallbackFromName(session?.user.name)}
+                  </AvatarFallback>
                 </Avatar>
                 <div className="grid flex-1 text-left text-sm leading-tight">
                   <span className="truncate font-semibold">

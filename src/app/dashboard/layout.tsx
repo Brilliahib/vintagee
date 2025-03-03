@@ -26,10 +26,9 @@ export default async function DashboardLayout({
 
   if (!session) return redirect("/login");
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        suppressHydrationWarning={true}
       >
         <SidebarProvider>
           <AppSidebar session={session!} />
