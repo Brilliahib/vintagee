@@ -3,6 +3,9 @@ import "../globals.css";
 import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/organisms/sidebar/app-sidebar";
 import BreadcrumbNav from "@/components/atoms/breadcrumb/Breadcrumb";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
+import { redirect } from "next/navigation";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,11 +17,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export default function DashboardLayout({
+export default async function DashboardLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const session = await getServerSession(authOptions);
+
+  if (!session) return redirect("/login");
   return (
     <html lang="en" suppressHydrationWarning>
       <body
@@ -26,7 +32,7 @@ export default function DashboardLayout({
         suppressHydrationWarning={true}
       >
         <SidebarProvider>
-          <AppSidebar />
+          <AppSidebar session={session!} />
           <SidebarInset>
             <BreadcrumbNav />
             <div className="px-5 py-20">{children}</div>
