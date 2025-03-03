@@ -12,6 +12,7 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarFooter,
 } from "@/components/ui/sidebar";
 import {
   ArrowLeftRight,
@@ -22,6 +23,8 @@ import {
   ShoppingBag,
   ShoppingCart,
 } from "lucide-react";
+import { Session } from "next-auth";
+import { NavUser } from "./NavUser";
 
 const monitoring = [
   { icon: <LayoutDashboard />, name: "Dashboard", href: "/dashboard" },
@@ -40,7 +43,11 @@ const history = [
   { icon: <ArrowLeftRight />, name: "Riwayat Tukar Fashion", href: "#" },
 ];
 
-export function AppSidebar() {
+interface AppsidebarProps {
+  session: Session;
+}
+
+export function AppSidebar({ session }: AppsidebarProps) {
   const pathname = usePathname();
 
   return (
@@ -79,7 +86,6 @@ export function AppSidebar() {
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
-
         <SidebarGroup>
           <SidebarGroupLabel>Riwayat Data</SidebarGroupLabel>
           <SidebarGroupContent>
@@ -104,13 +110,10 @@ export function AppSidebar() {
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
-
-        <div className="absolute bottom-0 flex h-10 w-full items-center justify-center gap-x-2 bg-gradient-to-t from-white from-50% to-transparent px-2 dark:from-slate-950">
-          <p className="text-xs text-muted-foreground">
-            © 2025. All Rights Reserved.
-          </p>
-        </div>
       </SidebarContent>
+      <SidebarFooter>
+        <NavUser session={session!} />
+      </SidebarFooter>
     </Sidebar>
   );
 }
