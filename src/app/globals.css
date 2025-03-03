@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  font-family: var(--font-figtree);
+  font-family: var(--font-geist-sans);
 }
 
 @layer base {

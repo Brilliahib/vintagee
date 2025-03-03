@@ -1,11 +1,16 @@
-import { Figtree } from "next/font/google";
-import "@/app/globals.css";
+import { Geist, Geist_Mono } from "next/font/google";
+import "../globals.css";
 import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/organisms/sidebar/app-sidebar";
 import BreadcrumbNav from "@/components/atoms/breadcrumb/Breadcrumb";
 
-const figtree = Figtree({
-  variable: "--font-figtree",
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
@@ -17,7 +22,7 @@ export default function DashboardLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${figtree.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         suppressHydrationWarning={true}
       >
         <SidebarProvider>
