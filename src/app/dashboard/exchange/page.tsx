@@ -5,8 +5,8 @@ export default function ExchangeDashboardPage() {
   return (
     <>
       <DashboardTitle
-        head="Tukar Fashion"
-        body="Menampilkan daftar permintaan tukar fashion."
+        head="Penawaran Tukar Produk"
+        body="Menampilkan daftar penawaran tukar produk."
       />
       <DashboardExchangeWrapper />
     </>

@@ -30,11 +30,11 @@ const monitoring = [
   { icon: <LayoutDashboard />, name: "Dashboard", href: "/dashboard" },
   {
     icon: <ShoppingCart />,
-    name: "Pembelian",
-    href: "/dashboard/purchase",
+    name: "Produk",
+    href: "/dashboard/product",
   },
   { icon: <ShoppingBag />, name: "Penjualan", href: "/dashboard/sales" },
-  { icon: <Shirt />, name: "Tukar Fashion", href: "/dashboard/exchange" },
+  { icon: <Shirt />, name: "Penawaran Produk", href: "/dashboard/exchange" },
 ];
 
 const history = [
@@ -50,7 +50,7 @@ const history = [
   },
   {
     icon: <ArrowLeftRight />,
-    name: "Riwayat Tukar Fashion",
+    name: "Riwayat Penawaran Produk",
     href: "/dashboard/history/exchange",
   },
 ];
@@ -82,9 +82,9 @@ export function AppSidebar({ session }: AppsidebarProps) {
                 <SidebarMenuItem key={i}>
                   <SidebarMenuButton
                     asChild
-                    className={`hover:bg-slate-100 dark:hover:bg-slate-900 ${
+                    className={`hover:bg-primary/10 hover:text-primary dark:hover:bg-slate-900 ${
                       pathname === item.href
-                        ? "bg-slate-200 dark:bg-slate-800"
+                        ? "bg-primary/10 text-primary hover:bg-primary/10 hover:text-primary dark:bg-slate-800"
                         : ""
                     }`}
                   >
@@ -106,9 +106,9 @@ export function AppSidebar({ session }: AppsidebarProps) {
                 <SidebarMenuItem key={i}>
                   <SidebarMenuButton
                     asChild
-                    className={`hover:bg-slate-100 dark:hover:bg-slate-900 ${
+                    className={`hover:bg-primary/10 hover:text-primary dark:hover:bg-slate-900 ${
                       pathname === item.href
-                        ? "bg-slate-200 dark:bg-slate-800"
+                        ? "bg-primary/10 text-primary hover:bg-primary/10 hover:text-primary dark:bg-slate-800"
                         : ""
                     }`}
                   >

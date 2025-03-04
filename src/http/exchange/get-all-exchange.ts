@@ -24,7 +24,7 @@ export const useGetAllExchange = (
   options?: Partial<UseQueryOptions<GetAllExchangeResponse, AxiosError>>,
 ) => {
   return useQuery({
-    queryKey: ["purchase"],
+    queryKey: ["exchange"],
     queryFn: () => GetAllExchangeHandler(token),
     ...options,
   });

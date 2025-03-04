@@ -1,6 +1,8 @@
 "use client";
 
 import { ColumnDef } from "@tanstack/react-table";
+import { format } from "date-fns";
+import { id } from "date-fns/locale";
 import ActionButton from "@/components/molecules/datatable/ActionButton";
 import {
   DropdownMenuItem,
@@ -9,11 +11,10 @@ import {
 } from "@/components/ui/dropdown-menu";
 import Link from "next/link";
 import { Eye } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { Exchange } from "@/types/exchange/exchange";
-import Image from "next/image";
+import { formatPrice } from "@/utils/format-price";
+import { Product } from "@/types/product/product";
 
-export const exchangeColumns: ColumnDef<Exchange>[] = [
+export const productUserColumns: ColumnDef<Product>[] = [
   {
     accessorKey: "index",
     header: "No",
@@ -22,67 +23,46 @@ export const exchangeColumns: ColumnDef<Exchange>[] = [
     },
   },
   {
-    accessorKey: "image",
-    header: "Foto Produk",
-    cell: ({ row }) => {
-      const data = row.original;
-      return (
-        <Image
-          src={data.image_url_product}
-          alt={data.name_product}
-          width={100}
-          height={100}
-        />
-      );
-    },
-  },
-  {
     accessorKey: "title",
     header: "Nama Produk",
     cell: ({ row }) => {
       const data = row.original;
+      return <p className="line-clamp-1 md:line-clamp-2">{data.name}</p>;
+    },
+  },
+  {
+    accessorKey: "category",
+    header: "Kategori",
+    cell: ({ row }) => {
+      const data = row.original;
       return (
-        <p className="line-clamp-1 md:line-clamp-2">{data.name_product}</p>
+        <p className="line-clamp-1 md:line-clamp-2">{data.category.name}</p>
       );
     },
   },
   {
-    accessorKey: "brand_product",
-    header: "Brand Produk",
+    accessorKey: "price",
+    header: "Harga",
     cell: ({ row }) => {
       const data = row.original;
       return (
-        <p className="line-clamp-1 md:line-clamp-2">{data.brand_product}</p>
+        <p className="line-clamp-1 md:line-clamp-2">
+          {formatPrice(data.price)}
+        </p>
       );
     },
   },
   {
-    accessorKey: "size",
-    header: "Size Produk",
+    accessorKey: "created_at",
+    header: "Tanggal Dibuat",
     cell: ({ row }) => {
       const data = row.original;
       return (
-        <p className="line-clamp-1 md:line-clamp-2">{data.size_product}</p>
-      );
-    },
-  },
-  {
-    accessorKey: "condition",
-    header: "Kondisi Produk",
-    cell: ({ row }) => {
-      const data = row.original;
-      return <p className="line-clamp-1 md:line-clamp-2">{data.condition}</p>;
-    },
-  },
-  {
-    accessorKey: "is_accepted",
-    header: "Status",
-    cell: ({ row }) => {
-      const data = row.original;
-      return (
-        <Badge variant={data.is_accepted ? "success" : "destructive"}>
-          {data.is_accepted ? "Setuju" : "Tidak Setuju"}
-        </Badge>
+        <p suppressHydrationWarning>
+          {format(new Date(data.created_at), "EEEE, d MMMM yyyy", {
+            locale: id,
+          })}
+        </p>
       );
     },
   },

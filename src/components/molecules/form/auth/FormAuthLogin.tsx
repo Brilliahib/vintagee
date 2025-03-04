@@ -51,9 +51,9 @@ export default function FormAuthLogin() {
       return;
     }
 
-    toast.success("Login Successful", {
+    toast.success("Login Berhasil", {
       description:
-        "Welcome back! You have successfully logged into your account.",
+        "Selamat datang kembali! Anda akan diarahkan menuju halaman dashboard",
     });
 
     router.push("/dashboard");

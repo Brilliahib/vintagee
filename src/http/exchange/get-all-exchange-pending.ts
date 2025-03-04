@@ -27,7 +27,7 @@ export const useGetAllExchangePending = (
   options?: Partial<UseQueryOptions<GetAllExchangePendingResponse, AxiosError>>,
 ) => {
   return useQuery({
-    queryKey: ["purchase"],
+    queryKey: ["exchange-pending"],
     queryFn: () => GetAllExchangePendingHandler(token),
     ...options,
   });
