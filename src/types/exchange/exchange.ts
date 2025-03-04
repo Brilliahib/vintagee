@@ -1,3 +1,5 @@
+import { Product } from "../product/product";
+
 export interface Exchange {
   id: string;
   user_id: string;
@@ -10,4 +12,5 @@ export interface Exchange {
   is_accepted: boolean;
   created_at: Date;
   updated_at: Date;
+  product: Product;
 }

@@ -1,10 +1,10 @@
 import { UseQueryOptions, useQuery } from "@tanstack/react-query";
 import { AxiosError } from "axios";
 import { api } from "@/lib/axios";
-import { Purchase } from "@/types/purchases/purchase";
+import { Exchange } from "@/types/exchange/exchange";
 
 interface GetAllExchangeResponse {
-  data: Purchase[];
+  data: Exchange[];
 }
 
 export const GetAllExchangeHandler = async (
