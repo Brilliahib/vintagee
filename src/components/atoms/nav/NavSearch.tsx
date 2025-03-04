@@ -5,6 +5,7 @@ export default function NavSearch() {
     <>
       <div className="w-full">
         <Input
+          type="text"
           placeholder="Search for items"
           className="w-full bg-transparent text-sm shadow-none md:text-base"
         />

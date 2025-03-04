@@ -5,8 +5,8 @@ import {
   Bell,
   ChevronsUpDown,
   CreditCard,
+  Home,
   LogOut,
-  Sparkles,
 } from "lucide-react";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -26,6 +26,9 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar";
 import { Session } from "next-auth";
+import { generateFallbackFromName } from "@/utils/generate-name";
+import Link from "next/link";
+import { signOut } from "next-auth/react";
 
 interface NavUserProps {
   session: Session;
@@ -48,7 +51,9 @@ export function NavUser({ session }: NavUserProps) {
                   src={session?.user.image_url}
                   alt={session?.user.name}
                 />
-                <AvatarFallback className="rounded-lg">CN</AvatarFallback>
+                <AvatarFallback className="rounded-lg">
+                  {generateFallbackFromName(session?.user.name)}
+                </AvatarFallback>
               </Avatar>
               <div className="grid flex-1 text-left text-sm leading-tight">
                 <span className="truncate font-semibold">
@@ -72,7 +77,9 @@ export function NavUser({ session }: NavUserProps) {
                     src={session?.user.image_url}
                     alt={session?.user.name}
                   />
-                  <AvatarFallback className="rounded-lg">CN</AvatarFallback>
+                  <AvatarFallback className="rounded-lg">
+                    {generateFallbackFromName(session?.user.name)}
+                  </AvatarFallback>
                 </Avatar>
                 <div className="grid flex-1 text-left text-sm leading-tight">
                   <span className="truncate font-semibold">
@@ -86,10 +93,12 @@ export function NavUser({ session }: NavUserProps) {
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
-              <DropdownMenuItem>
-                <Sparkles />
-                Upgrade to Pro
-              </DropdownMenuItem>
+              <Link href={"/"}>
+                <DropdownMenuItem className="cursor-pointer">
+                  <Home />
+                  Halaman Beranda
+                </DropdownMenuItem>
+              </Link>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
@@ -107,7 +116,10 @@ export function NavUser({ session }: NavUserProps) {
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>
+            <DropdownMenuItem
+              onClick={() => signOut({ callbackUrl: "/" })}
+              className="cursor-pointer text-destructive focus:bg-destructive/20 focus:text-destructive"
+            >
               <LogOut />
               Log out
             </DropdownMenuItem>

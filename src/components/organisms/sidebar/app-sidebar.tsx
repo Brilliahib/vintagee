@@ -38,9 +38,21 @@ const monitoring = [
 ];
 
 const history = [
-  { icon: <Clock />, name: "Riwayat Pembelian", href: "#" },
-  { icon: <FileClock />, name: "Riwayat Penjualan", href: "#" },
-  { icon: <ArrowLeftRight />, name: "Riwayat Tukar Fashion", href: "#" },
+  {
+    icon: <Clock />,
+    name: "Riwayat Pembelian",
+    href: "/dashboard/history/purchase",
+  },
+  {
+    icon: <FileClock />,
+    name: "Riwayat Penjualan",
+    href: "/dashboard/history/sales",
+  },
+  {
+    icon: <ArrowLeftRight />,
+    name: "Riwayat Tukar Fashion",
+    href: "/dashboard/history/exchange",
+  },
 ];
 
 interface AppsidebarProps {
