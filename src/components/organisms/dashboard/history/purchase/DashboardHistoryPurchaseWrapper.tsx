@@ -5,7 +5,7 @@ import { DataTable } from "@/components/molecules/datatable/DataTable";
 import { useGetAllPurchases } from "@/http/purchases/get-all-purchase";
 import { useSession } from "next-auth/react";
 
-export default function DashboardPurchaseWrapper() {
+export default function DashboardHistoryPurchaseWrapper() {
   const { data: session, status } = useSession();
 
   const { data, isPending } = useGetAllPurchases(

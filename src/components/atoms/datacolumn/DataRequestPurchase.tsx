@@ -15,7 +15,7 @@ import { Purchase } from "@/types/purchases/purchase";
 import { formatPrice } from "@/utils/format-price";
 import { Badge } from "@/components/ui/badge";
 
-export const purchaseColumns: ColumnDef<Purchase>[] = [
+export const requestPurchaseColumns: ColumnDef<Purchase>[] = [
   {
     accessorKey: "index",
     header: "No",

@@ -3,14 +3,14 @@ import { AxiosError } from "axios";
 import { api } from "@/lib/axios";
 import { Purchase } from "@/types/purchases/purchase";
 
-interface GetAllPurchasesResponse {
+interface GetAllExchangeResponse {
   data: Purchase[];
 }
 
-export const GetAllPurchasesHandler = async (
+export const GetAllExchangeHandler = async (
   token: string,
-): Promise<GetAllPurchasesResponse> => {
-  const { data } = await api.get<GetAllPurchasesResponse>("/order", {
+): Promise<GetAllExchangeResponse> => {
+  const { data } = await api.get<GetAllExchangeResponse>("/exchange", {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -19,13 +19,13 @@ export const GetAllPurchasesHandler = async (
   return data;
 };
 
-export const useGetAllPurchases = (
+export const useGetAllExchange = (
   token: string,
-  options?: Partial<UseQueryOptions<GetAllPurchasesResponse, AxiosError>>,
+  options?: Partial<UseQueryOptions<GetAllExchangeResponse, AxiosError>>,
 ) => {
   return useQuery({
     queryKey: ["purchase"],
-    queryFn: () => GetAllPurchasesHandler(token),
+    queryFn: () => GetAllExchangeHandler(token),
     ...options,
   });
 };
