@@ -54,7 +54,7 @@ export default function ExchangeCreateContent({
     },
     onSuccess: async () => {
       toast.success("Berhasil melakukan tukar fashion!");
-      return router.push("/dashboard");
+      return router.push("/dashboard/history/exchange");
     },
   });
 
