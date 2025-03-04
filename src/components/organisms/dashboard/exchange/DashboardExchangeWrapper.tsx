@@ -11,7 +11,7 @@ export default function DashboardExchangeWrapper() {
     enabled: status === "authenticated",
   });
   return (
-    <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
+    <div className="grid grid-cols-1 gap-4 md:grid-cols-4 md:gap-6">
       {data?.data.map((product) => (
         <CardExchangeProductPending key={product.id} data={product} />
       ))}

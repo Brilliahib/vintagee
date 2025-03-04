@@ -86,20 +86,6 @@ export const exchangeColumns: ColumnDef<Exchange>[] = [
       );
     },
   },
-  //   {
-  //     accessorKey: "created_at",
-  //     header: "Tanggal Pembelian",
-  //     cell: ({ row }) => {
-  //       const data = row.original;
-  //       return (
-  //         <p suppressHydrationWarning>
-  //           {format(new Date(data.created_at), "EEEE, d MMMM yyyy", {
-  //             locale: id,
-  //           })}
-  //         </p>
-  //       );
-  //     },
-  //   },
   {
     id: "actions",
     cell: ({ row }) => {
