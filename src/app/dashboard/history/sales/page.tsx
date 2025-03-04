@@ -6,7 +6,7 @@ export default function DashboardHistorySalesPage() {
     <>
       <DashboardTitle
         head="Riwayat Penjualan"
-        body="Menampilkan semua data riwayat pembelian."
+        body="Menampilkan semua data riwayat penjualan."
       />
       <DashboardHistorySalesWrapper />
     </>
