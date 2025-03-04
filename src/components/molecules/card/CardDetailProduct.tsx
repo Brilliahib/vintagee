@@ -127,12 +127,16 @@ export default function CardDetailProduct({
                   </>
                 ) : (
                   <>
-                    <Button>
-                      <ShoppingCart /> Beli Sekarang
-                    </Button>
-                    <Button variant={"outline"}>
-                      <ArrowLeftRight /> Tukar Sekarang
-                    </Button>
+                    <Link href={`/product/${data?.id}/checkout`}>
+                      <Button className="w-full">
+                        <ShoppingCart /> Beli Sekarang
+                      </Button>
+                    </Link>
+                    <Link href={`/product/${data?.id}/exchange`}>
+                      <Button variant={"outline"} className="w-full">
+                        <ArrowLeftRight /> Tukar Sekarang
+                      </Button>
+                    </Link>
                   </>
                 )}
               </div>
