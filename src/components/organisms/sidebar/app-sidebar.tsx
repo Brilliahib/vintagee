@@ -25,6 +25,7 @@ import {
 } from "lucide-react";
 import { Session } from "next-auth";
 import { NavUser } from "./NavUser";
+import Image from "next/image";
 
 const monitoring = [
   { icon: <LayoutDashboard />, name: "Dashboard", href: "/dashboard" },
@@ -69,12 +70,12 @@ export function AppSidebar({ session }: AppsidebarProps) {
           <SidebarMenuItem>
             <div className="ml-2 flex items-center gap-x-3">
               <Link href={"/dashboard"} className="flex items-center gap-2">
-                {/* <Image
+                <Image
                   src={"/images/logo_notext.png"}
                   alt="Vintagee"
                   width={20}
                   height={20}
-                /> */}
+                />
                 <h1 className="font-semibold tracking-tight text-primary">
                   Vintagee
                 </h1>
