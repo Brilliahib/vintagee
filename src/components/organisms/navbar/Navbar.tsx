@@ -20,24 +20,54 @@ export default function Navbar() {
   const links = useMemo(
     () => [
       {
-        href: "/woman",
-        label: "Woman",
+        href: "#",
+        label: "Jacket",
         active: pathname.startsWith("/woman"),
       },
       {
-        href: "/man",
-        label: "Man",
+        href: "#",
+        label: "T-Shirt",
         active: pathname.startsWith("/man"),
       },
       {
-        href: "/kids",
-        label: "Kids",
+        href: "#",
+        label: "Pants",
         active: pathname.startsWith("/kids"),
       },
       {
-        href: "/entertainments",
-        label: "Entertainments",
+        href: "#",
+        label: "Hoodie",
         active: pathname.startsWith("/entertainments"),
+      },
+      {
+        href: "#",
+        label: "Shoes",
+        active: pathname.startsWith("/shoes"),
+      },
+      {
+        href: "#",
+        label: "Accessories",
+        active: pathname.startsWith("/accessories"),
+      },
+      {
+        href: "#",
+        label: "Bags",
+        active: pathname.startsWith("/bags"),
+      },
+      {
+        href: "#",
+        label: "Watches",
+        active: pathname.startsWith("/watches"),
+      },
+      {
+        href: "#",
+        label: "Hats",
+        active: pathname.startsWith("/hats"),
+      },
+      {
+        href: "#",
+        label: "Socks",
+        active: pathname.startsWith("/socks"),
       },
     ],
     [pathname],
