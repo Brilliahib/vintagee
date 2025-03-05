@@ -24,7 +24,7 @@ export default function CardProduct({ product, isLoading }: ProductProps) {
             alt={product!.name}
             width={250}
             height={250}
-            className="rounded-md object-cover"
+            className="h-[250px] rounded-md object-cover"
           />
         </CardHeader>
         <CardContent className="border-0 p-0 pt-2 md:pt-4">

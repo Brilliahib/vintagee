@@ -93,7 +93,9 @@ export default function CardDetailProduct({
                       <div className="text-muted-foreground md:w-4/12">
                         Deskripsi
                       </div>
-                      <div className="md:w-8/12">{data!.description}</div>
+                      <div className="md:w-8/12">
+                        {data!.description ?? "Tidak ada deskripsi"}
+                      </div>
                     </div>
                     <div className="flex flex-col gap-1 md:flex-row">
                       <div className="text-muted-foreground md:w-4/12">
