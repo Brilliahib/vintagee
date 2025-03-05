@@ -24,7 +24,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { toast } from "sonner";
 
 export default function FormAuthLogin() {
@@ -35,6 +35,8 @@ export default function FormAuthLogin() {
     mode: "onChange",
   });
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const callbackUrl = searchParams.get("callbackUrl") || "/dashboard";
 
   const onSubmit = async (body: LoginType) => {
     setIsLoading(true);
@@ -52,11 +54,10 @@ export default function FormAuthLogin() {
     }
 
     toast.success("Login Berhasil", {
-      description:
-        "Selamat datang kembali! Anda akan diarahkan menuju halaman dashboard",
+      description: "Selamat datang kembali!",
     });
 
-    router.push("/dashboard");
+    router.push(callbackUrl);
   };
 
   return (

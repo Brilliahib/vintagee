@@ -4,23 +4,35 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { Link as NavbarLink } from "@/components/organisms/navbar/Navbar";
 import NavLink from "./NavLink";
+import { useSession } from "next-auth/react";
+import Image from "next/image";
 
 interface NavHeaderProps {
   links: NavbarLink[];
 }
 
 export default function NavButton({ links }: NavHeaderProps) {
+  const { data: session } = useSession();
+
   return (
     <>
       <div className="hidden items-center gap-4 md:flex">
-        <div className="flex items-center gap-4">
-          <Link href="/login">
-            <Button variant={"outline"}>Login</Button>
-          </Link>
-          <Link href="/register">
-            <Button variant={"default"}>Register</Button>
-          </Link>
-        </div>
+        {session ? (
+          <div>
+            <Link href={"/dashboard"}>
+              <Button>Dashboard</Button>
+            </Link>
+          </div>
+        ) : (
+          <div className="flex items-center gap-4">
+            <Link href="/login">
+              <Button variant={"outline"}>Login</Button>
+            </Link>
+            <Link href="/register">
+              <Button variant={"default"}>Register</Button>
+            </Link>
+          </div>
+        )}
       </div>
 
       <div className="flex items-center md:hidden">
@@ -30,7 +42,7 @@ export default function NavButton({ links }: NavHeaderProps) {
             <Button
               variant="outline"
               size="icon"
-              className="w-full shrink-0 border-0 bg-white shadow-none md:hidden"
+              className="w-full shrink-0 border-0 bg-white text-black shadow-none md:hidden"
             >
               <Menu
                 style={{ height: "20px", width: "20px" }}
@@ -42,25 +54,39 @@ export default function NavButton({ links }: NavHeaderProps) {
           <SheetContent className="flex flex-col">
             <div className="mx-auto my-8">
               <Link href={"/"} className="flex items-center gap-2">
+                <Image
+                  src={"/images/logo_notext.png"}
+                  alt="Vintagee"
+                  width={40}
+                  height={40}
+                />
                 <h1 className="font-bold text-primary">Vintagee</h1>
               </Link>
             </div>
-            <nav className="grid-gap-2 font-poppins space-y-4">
-              {links.map((link) => (
-                <NavLink key={link.label} {...link} />
-              ))}
-              <div className="flex flex-col space-y-4">
-                <Link href="/login">
+            {session ? (
+              <div>
+                <Link href={"/dashboard"}>
+                  <Button>Dashboard</Button>
+                </Link>
+              </div>
+            ) : (
+              <div className="flex w-full gap-2">
+                <Link href="/login" className="w-full">
                   <Button variant={"outline"} className="w-full">
                     Login
                   </Button>
                 </Link>
-                <Link href="/register">
+                <Link href="/register" className="w-full">
                   <Button variant={"default"} className="w-full">
                     Register
                   </Button>
                 </Link>
               </div>
+            )}
+            <nav className="grid-gap-2 font-poppins space-y-4">
+              {links.map((link) => (
+                <NavLink key={link.label} {...link} />
+              ))}
             </nav>
           </SheetContent>
         </Sheet>
