@@ -17,14 +17,14 @@ export default function CardProduct({ product, isLoading }: ProductProps) {
 
   return (
     <Link href={`/product/${product?.id ?? "#"}`}>
-      <Card className="w-fit border-0 shadow-none">
+      <Card className="w-[200px] min-w-[200px] shrink-0 border-0 shadow-none md:w-full">
         <CardHeader className="p-0">
           <Image
             src={product!.image_url}
             alt={product!.name}
             width={250}
             height={250}
-            className="h-[250px] rounded-md object-cover"
+            className="h-[250px] w-full rounded-md object-cover"
           />
         </CardHeader>
         <CardContent className="border-0 p-0 pt-2 md:pt-4">

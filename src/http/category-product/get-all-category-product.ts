@@ -19,7 +19,7 @@ export const useGetAllCategoryProduct = (
   options?: Partial<UseQueryOptions<GetAllCategoryProductResponse, AxiosError>>,
 ) => {
   return useQuery({
-    queryKey: ["product"],
+    queryKey: ["category-product"],
     queryFn: () => GetAllCategoryProductHandler(),
     ...options,
   });
