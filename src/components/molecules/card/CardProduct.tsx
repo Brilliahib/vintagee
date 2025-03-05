@@ -25,6 +25,7 @@ export default function CardProduct({ product, isLoading }: ProductProps) {
             width={250}
             height={250}
             className="h-[250px] w-full rounded-md object-cover"
+            loading="lazy"
           />
         </CardHeader>
         <CardContent className="border-0 p-0 pt-2 md:pt-4">
