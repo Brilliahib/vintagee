@@ -17,7 +17,7 @@ export default function CardProduct({ product, isLoading }: ProductProps) {
 
   return (
     <Link href={`/product/${product?.id ?? "#"}`}>
-      <Card className="w-fit border-0 shadow-none">
+      <Card className="w-[200px] min-w-[200px] shrink-0 border-0 shadow-none md:w-full">
         <CardHeader className="p-0">
           <Image
             src={product!.image_url}
