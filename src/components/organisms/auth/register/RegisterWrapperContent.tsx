@@ -1,6 +1,7 @@
 import FormAuthRegister from "@/components/molecules/form/auth/FormAuthRegister";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function RegisterWrapperContent() {
@@ -19,11 +20,21 @@ export default function RegisterWrapperContent() {
         <div className="absolute inset-0 bg-auth-pattern bg-cover bg-no-repeat grayscale" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/60" />
         <div className="relative z-20 flex items-center gap-x-3 text-lg font-medium">
-          Vintagee
+          <Link href={"/"} className="flex items-center gap-2">
+            <Image
+              src={"/images/logo_notext.png"}
+              alt="Vintagee"
+              width={20}
+              height={20}
+            />
+            <h1 className="font-semibold tracking-tight text-primary">
+              Vintagee
+            </h1>
+          </Link>
         </div>
         <div className="relative z-20 mt-auto">
           <blockquote className="space-y-2">
-            <p className="max-w-md text-lg">Vintagee</p>
+            <p className="max-w-md text-lg">Selamat Datang</p>
             <footer className="text-sm">
               Temukan gaya unikmu! Jual, beli, dan barter pakaian vintage dengan
               mudah, aman, dan stylish.

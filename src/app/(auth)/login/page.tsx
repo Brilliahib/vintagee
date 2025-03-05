@@ -2,7 +2,7 @@ import LoginWrapperContent from "@/components/organisms/auth/login/LoginWrapperC
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Sign In | Vintagee",
+  title: "Masuk | Vintagee",
   description: "Masuk ke Vintagee untuk mengakses fitur-fitur yang tersedia.",
 };
 

@@ -24,7 +24,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { toast } from "sonner";
 
 export default function FormAuthLogin() {
@@ -35,6 +35,8 @@ export default function FormAuthLogin() {
     mode: "onChange",
   });
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const callbackUrl = searchParams.get("callbackUrl") || "/dashboard";
 
   const onSubmit = async (body: LoginType) => {
     setIsLoading(true);
@@ -52,11 +54,10 @@ export default function FormAuthLogin() {
     }
 
     toast.success("Login Berhasil", {
-      description:
-        "Selamat datang kembali! Anda akan diarahkan menuju halaman dashboard",
+      description: "Selamat datang kembali!",
     });
 
-    router.push("/dashboard");
+    router.push(callbackUrl);
   };
 
   return (
@@ -64,10 +65,10 @@ export default function FormAuthLogin() {
       <Card className="w-full border-0 shadow-transparent">
         <CardHeader className="text-center">
           <CardTitle className="text-2xl font-bold tracking-tight">
-            Login
+            Masuk
           </CardTitle>
           <CardDescription>
-            Welcome! Enter your email below to login to your account
+            Selamat Datang! Masukkan email dan password anda.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -101,7 +102,7 @@ export default function FormAuthLogin() {
                       <Input
                         type="password"
                         id="password"
-                        placeholder="Enter your password"
+                        placeholder="Masukkan password"
                         {...field}
                       />
                     </FormControl>
@@ -111,38 +112,21 @@ export default function FormAuthLogin() {
               />
               <div>
                 <Button type="submit" className="w-full" disabled={isLoading}>
-                  {isLoading ? "Loading..." : "Login"}{" "}
+                  {isLoading ? "Loading..." : "Masuk"}{" "}
                 </Button>
               </div>
             </form>
           </Form>
           <div className="mt-6 space-y-4 text-center">
             <div className="text-center text-sm">
-              Don&apos;t have an account?{" "}
+              Belum punya akun? {""}
               <Link
                 href="/register"
                 className="text-primary underline underline-offset-4"
               >
-                Sign up
+                Daftar Sekarang
               </Link>
             </div>
-            <p className="px-8 text-center text-sm text-muted-foreground">
-              By clicking continue, you agree to our{" "}
-              <Link
-                href="/terms"
-                className="underline underline-offset-4 hover:text-primary"
-              >
-                Terms of Service
-              </Link>{" "}
-              and{" "}
-              <Link
-                href="/privacy"
-                className="underline underline-offset-4 hover:text-primary"
-              >
-                Privacy Policy
-              </Link>
-              .
-            </p>
           </div>
         </CardContent>
       </Card>

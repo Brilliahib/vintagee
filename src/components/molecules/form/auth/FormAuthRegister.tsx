@@ -94,7 +94,7 @@ export default function FormAuthRegister() {
         <div className="w-full">
           <CardHeader className="text-center">
             <CardTitle className="text-2xl font-bold tracking-tight">
-              Register
+              Daftar
             </CardTitle>
             <CardDescription>
               Selamat datang! Silahkan daftar menggunakan akun anda.
@@ -186,14 +186,15 @@ export default function FormAuthRegister() {
               </form>
             </Form>
             <div className="mt-6 text-center">
-              <p className="text-sm text-muted-foreground">
-                Sudah punya akun?{" "}
-                <Link href={"/login"}>
-                  <span className="font-semibold text-primary underline">
-                    Masuk Sekarang
-                  </span>
+              <div className="text-center text-sm">
+                Sudah punya akun? {""}
+                <Link
+                  href="/login"
+                  className="text-primary underline underline-offset-4"
+                >
+                  Masuk Sekarang
                 </Link>
-              </p>
+              </div>
             </div>
           </CardContent>
         </div>

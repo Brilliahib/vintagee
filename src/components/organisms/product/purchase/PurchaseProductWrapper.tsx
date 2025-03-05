@@ -1,19 +1,19 @@
 import PageContainer from "@/components/atoms/container/PageContainer";
-import ExchangeCreateContent from "./ExchangeCreateContent";
+import PurchaseCreateContent from "./PurchaseCreateContent";
 import CardPurchaseExchangeProduct from "@/components/molecules/card/CardPurchaseExchangeProduct";
 
-interface ExchangeProductWrapperProps {
+interface PurchaseProductWrapperProps {
   id: string;
 }
 
-export default function ExchangeProductWrapper({
+export default function PurchaseProductWrapper({
   id,
-}: ExchangeProductWrapperProps) {
+}: PurchaseProductWrapperProps) {
   return (
     <PageContainer>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6">
         <div className="md:col-span-2">
-          <ExchangeCreateContent id={id} />
+          <PurchaseCreateContent id={id} />
         </div>
         <CardPurchaseExchangeProduct id={id} />
       </div>
