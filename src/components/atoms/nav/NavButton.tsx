@@ -5,7 +5,6 @@ import { Menu } from "lucide-react";
 import { Link as NavbarLink } from "@/components/organisms/navbar/Navbar";
 import NavLink from "./NavLink";
 import { useSession } from "next-auth/react";
-import Image from "next/image";
 
 interface NavHeaderProps {
   links: NavbarLink[];
@@ -54,19 +53,19 @@ export default function NavButton({ links }: NavHeaderProps) {
           <SheetContent className="flex flex-col">
             <div className="mx-auto my-8">
               <Link href={"/"} className="flex items-center gap-2">
-                <Image
+                {/* <Image
                   src={"/images/logo_notext.png"}
                   alt="Vintagee"
                   width={40}
                   height={40}
-                />
+                /> */}
                 <h1 className="font-bold text-primary">Vintagee</h1>
               </Link>
             </div>
             {session ? (
-              <div>
+              <div className="w-full">
                 <Link href={"/dashboard"}>
-                  <Button>Dashboard</Button>
+                  <Button className="w-full">Dashboard</Button>
                 </Link>
               </div>
             ) : (

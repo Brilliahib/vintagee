@@ -2,7 +2,7 @@ import PageContainer from "../container/PageContainer";
 
 export default function Footer() {
   return (
-    <div className="mt-8 bg-[#f4f4f4] md:mt-16">
+    <div className="mt-8 bg-primary text-white md:mt-16">
       <PageContainer>
         <div className="grid grid-cols-2 gap-6 py-8 md:grid-cols-4">
           <div className="space-y-2 md:space-y-4">
