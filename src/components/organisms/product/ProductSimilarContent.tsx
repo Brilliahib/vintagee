@@ -1,4 +1,4 @@
-import CardProduct from "@/components/molecules/card/CardProduct";
+import CardSimilarProduct from "@/components/molecules/card/CardSimilarProduct";
 import { useGetAllProductByCategory } from "@/http/product/get-all-product-by-category";
 
 interface ProductSimilarContentProps {
@@ -17,10 +17,10 @@ export default function ProductSimilarContent({
       <div className="grid grid-cols-2 gap-4 gap-y-8 md:grid-cols-4 md:gap-6">
         {isPending
           ? Array.from({ length: 4 }).map((_, index) => (
-              <CardProduct key={index} isLoading />
+              <CardSimilarProduct key={index} isLoading />
             ))
           : data?.data.map((product) => (
-              <CardProduct key={product.id} product={product} />
+              <CardSimilarProduct key={product.id} product={product} />
             ))}
       </div>
     </div>
