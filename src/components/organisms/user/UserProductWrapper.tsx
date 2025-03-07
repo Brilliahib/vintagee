@@ -2,7 +2,7 @@
 
 import PageContainer from "@/components/atoms/container/PageContainer";
 import CardDetailUserProduct from "@/components/molecules/card/CardDetailUserProduct";
-import CardProduct from "@/components/molecules/card/CardProduct";
+import CardProductUser from "@/components/molecules/card/CardProductUser";
 import SkeletonCardDetailUser from "@/components/molecules/skeleton/SkeletonCardDetailUser";
 import { useGetDetailUser } from "@/http/user/get-detail-user";
 import { useGetDetailUserProduct } from "@/http/user/get-product-user";
@@ -24,14 +24,17 @@ export default function UserProductWrapper({ id }: UserProductWrapperProps) {
           ) : (
             <CardDetailUserProduct data={data?.data} />
           )}
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
-            {isFetching
-              ? Array.from({ length: 4 }).map((_, index) => (
-                  <CardProduct key={index} isLoading />
-                ))
-              : product?.data.map((product) => (
-                  <CardProduct key={product.id} product={product} />
-                ))}
+          <div className="space-y-4 md:space-y-6">
+            <h1 className="text-lg font-bold md:text-xl">Produk Yang Dijual</h1>
+            <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
+              {isFetching
+                ? Array.from({ length: 4 }).map((_, index) => (
+                    <CardProductUser key={index} isLoading />
+                  ))
+                : product?.data.map((product) => (
+                    <CardProductUser key={product.id} product={product} />
+                  ))}
+            </div>
           </div>
         </PageContainer>
       </main>
