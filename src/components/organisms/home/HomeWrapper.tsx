@@ -13,8 +13,8 @@ export default function HomeWrapper() {
         <div className="space-y-10 md:space-y-16">
           <BannerHome />
           <HomeAllProduct />
-          <HomeArticle />
           <HomeCategoryProduct />
+          <HomeArticle />
         </div>
       </PageContainer>
     </>
