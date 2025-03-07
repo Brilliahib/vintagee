@@ -13,3 +13,4 @@ LIST PAGES VINTAGEE
 11. Dashboard Riwayat Penawaran Produk
 12. Beli Produk
 13. Tukar Produk
+14. Detail Artikel

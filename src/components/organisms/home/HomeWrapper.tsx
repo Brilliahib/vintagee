@@ -3,6 +3,7 @@ import PageContainer from "@/components/atoms/container/PageContainer";
 import HomeWallpaper from "./HomeWallpaper";
 import HomeAllProduct from "./HomeAllProduct";
 import HomeCategoryProduct from "./HomeCategoryProduct";
+import HomeArticle from "./HomeArticle";
 
 export default function HomeWrapper() {
   return (
@@ -12,6 +13,7 @@ export default function HomeWrapper() {
         <div className="space-y-10 md:space-y-16">
           <BannerHome />
           <HomeAllProduct />
+          <HomeArticle />
           <HomeCategoryProduct />
         </div>
       </PageContainer>
