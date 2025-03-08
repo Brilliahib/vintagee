@@ -4,7 +4,7 @@ export default function HomeWallpaper() {
   return (
     <div className="mb-6 md:mb-16">
       <Image
-        src="/images/wp/wallpaper.png"
+        src="/images/banner/banner-new.png"
         alt="Wallpaper"
         width={2000}
         height={647}
