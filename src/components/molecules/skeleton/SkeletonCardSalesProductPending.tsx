@@ -9,7 +9,7 @@ import {
 import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
 
-export default function SkeletonCardExchangeProductPending() {
+export default function SkeletonCardSalesProductPending() {
   return (
     <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
       {[...Array(4)].map((_, index) => (

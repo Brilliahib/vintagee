@@ -94,6 +94,9 @@ export default function PurchaseCreateContent({
       <CardHeader>
         <CardTitle>Silahkan Lakukan Pembayaran</CardTitle>
         <CardDescription>
+          <div className="mb-4">
+            Pilih nomor rekening dan transfer sesuai dengan harga produk.
+          </div>
           <div className="flex items-center gap-1">
             <span>BNI 124 135 199 0</span>
             <Button

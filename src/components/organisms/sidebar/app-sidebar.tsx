@@ -17,7 +17,6 @@ import {
 import {
   ArrowLeftRight,
   Clock,
-  FileClock,
   LayoutDashboard,
   Shirt,
   ShoppingBag,
@@ -30,12 +29,21 @@ import Image from "next/image";
 const monitoring = [
   { icon: <LayoutDashboard />, name: "Dashboard", href: "/dashboard" },
   {
-    icon: <ShoppingCart />,
+    icon: <Shirt />,
     name: "Produk",
     href: "/dashboard/product",
   },
+  {
+    icon: <ShoppingCart />,
+    name: "Pembelian",
+    href: "/dashboard/purchase",
+  },
   { icon: <ShoppingBag />, name: "Penjualan", href: "/dashboard/sales" },
-  { icon: <Shirt />, name: "Penawaran Produk", href: "/dashboard/exchange" },
+  {
+    icon: <ArrowLeftRight />,
+    name: "Penawaran Produk",
+    href: "/dashboard/exchange",
+  },
 ];
 
 const history = [
@@ -43,16 +51,6 @@ const history = [
     icon: <Clock />,
     name: "Riwayat Pembelian",
     href: "/dashboard/history/purchase",
-  },
-  {
-    icon: <FileClock />,
-    name: "Riwayat Penjualan",
-    href: "/dashboard/history/sales",
-  },
-  {
-    icon: <ArrowLeftRight />,
-    name: "Riwayat Penawaran Produk",
-    href: "/dashboard/history/exchange",
   },
 ];
 
