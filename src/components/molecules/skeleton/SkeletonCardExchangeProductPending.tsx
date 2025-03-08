@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 
 export default function SkeletonCardExchangeProductPending() {
   return (
-    <div className="grid grid-cols-4 gap-4">
+    <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
       {[...Array(4)].map((_, index) => (
         <Card key={index}>
           <CardHeader>

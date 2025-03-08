@@ -3,6 +3,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useGetDetailProduct } from "@/http/product/get-detail-product";
+import { formatPrice } from "@/utils/format-price";
 import Image from "next/image";
 
 interface CardPurchaseExchangeProductProps {
@@ -51,6 +52,12 @@ export default function CardPurchaseExchangeProduct({
                   <div className="md:w-8/12">{data?.data.name}</div>
                 </div>
                 <div className="flex flex-col gap-1 md:flex-row">
+                  <div className="text-muted-foreground md:w-4/12">Harga</div>
+                  <div className="md:w-8/12">
+                    {formatPrice(data?.data.price)}
+                  </div>
+                </div>
+                <div className="flex flex-col gap-1 md:flex-row">
                   <div className="text-muted-foreground md:w-4/12">Ukuran</div>
                   <div className="md:w-8/12">{data?.data.size}</div>
                 </div>
@@ -58,7 +65,9 @@ export default function CardPurchaseExchangeProduct({
                   <div className="text-muted-foreground md:w-4/12">
                     Deskripsi
                   </div>
-                  <div className="md:w-8/12">{data?.data.description}</div>
+                  <div className="md:w-8/12">
+                    {data?.data.description ?? "Tidak ada deskripsi"}
+                  </div>
                 </div>
                 <div className="flex flex-col gap-1 md:flex-row">
                   <div className="text-muted-foreground md:w-4/12">Kondisi</div>

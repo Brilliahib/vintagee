@@ -7,10 +7,9 @@ LIST PAGES VINTAGEE
 5. Dashboard
 6. Dashboard Produk
 7. Dashboard Penjualan
-8. Dashboard Penawaran Produk
-9. Dashboard Riwayat Pembelian
-10. Dashboard Penjualan
-11. Dashboard Riwayat Penawaran Produk
-12. Beli Produk
-13. Tukar Produk
-14. Detail Artikel
+8. Dashboard Riwayat Pembelian
+9. Dashboard Penjualan
+10. Dashboard Riwayat Penawaran Produk
+11. Beli Produk
+12. Tukar Produk
+13. Detail Artikel

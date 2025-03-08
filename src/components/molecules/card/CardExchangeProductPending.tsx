@@ -27,7 +27,6 @@ export default function CardExchangeProductPending({
 
   const handleDialogOpen = (id: string) => {
     setSelectedExchangeId(id);
-    console.log(id);
     setIsDialogOpen(true);
   };
 

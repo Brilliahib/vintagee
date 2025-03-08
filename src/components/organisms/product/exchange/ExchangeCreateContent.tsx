@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import {
   Form,
   FormControl,
+  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -151,6 +152,10 @@ export default function ExchangeCreateContent({
                     />
                   </FormControl>
                   <FormMessage />
+                  <FormDescription>
+                    Masukkan ukuran produk, bisa berupa huruf (contoh: S, M, L,
+                    XL) atau angka (contoh: 38, 42, 44).
+                  </FormDescription>
                 </FormItem>
               )}
             />
