@@ -1,4 +1,5 @@
 import DashboardTitle from "@/components/atoms/typography/DashboardTitle";
+import DashboardWrapper from "@/components/organisms/dashboard/DashboardWrapper";
 
 export default function DashboardPage() {
   return (
@@ -7,6 +8,7 @@ export default function DashboardPage() {
         head="Dashboard"
         body="Selamat datang di Dashboard Vintagee!"
       />
+      <DashboardWrapper />
     </section>
   );
 }
