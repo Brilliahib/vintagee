@@ -83,7 +83,7 @@ export default function NavButton({ links }: NavHeaderProps) {
                 </Link>
               </div>
             )}
-            <nav className="grid-gap-2 font-poppins space-y-4">
+            <nav className="grid-gap-2 space-y-4">
               {links.map((link) => (
                 <NavLink key={link.label} {...link} />
               ))}

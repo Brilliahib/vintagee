@@ -7,6 +7,7 @@ import NavButton from "@/components/atoms/nav/NavButton";
 import NavL from "@/components/atoms/nav/NavL";
 import NavLink from "@/components/atoms/nav/NavLink";
 import NavSearch from "@/components/atoms/nav/NavSearch";
+import Link from "next/link";
 
 export interface Link {
   href: string;

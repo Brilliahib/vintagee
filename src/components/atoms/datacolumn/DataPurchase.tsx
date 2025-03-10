@@ -64,7 +64,7 @@ export const purchaseColumns: ColumnDef<Purchase>[] = [
       const data = row.original;
       return (
         <Badge variant={data.is_paid ? "success" : "destructive"}>
-          {data.is_paid ? "Sudah Dibayar" : "Belum Dibayar"}
+          {data.is_paid ? "Sudah Dibayar" : "Menunggu Konfirmasi"}
         </Badge>
       );
     },

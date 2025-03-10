@@ -56,7 +56,7 @@ export default function PurchaseCreateContent({
     },
     onSuccess: async () => {
       toast.success("Berhasil melakukan order!");
-      return router.push("/dashboard/history/purchase");
+      return router.push("/dashboard/purchase");
     },
   });
 
