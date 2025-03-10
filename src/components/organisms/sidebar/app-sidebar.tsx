@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/sidebar";
 import {
   ArrowLeftRight,
-  Clock,
+  House,
   LayoutDashboard,
   Shirt,
   ShoppingBag,
@@ -27,6 +27,7 @@ import { NavUser } from "./NavUser";
 import Image from "next/image";
 
 const monitoring = [
+  { icon: <House />, name: "Halaman Beranda", href: "/" },
   { icon: <LayoutDashboard />, name: "Dashboard", href: "/dashboard" },
   {
     icon: <Shirt />,
@@ -43,14 +44,6 @@ const monitoring = [
     icon: <ArrowLeftRight />,
     name: "Penawaran Produk",
     href: "/dashboard/exchange",
-  },
-];
-
-const history = [
-  {
-    icon: <Clock />,
-    name: "Riwayat Pembelian",
-    href: "/dashboard/history/purchase",
   },
 ];
 
@@ -88,30 +81,6 @@ export function AppSidebar({ session }: AppsidebarProps) {
           <SidebarGroupContent>
             <SidebarMenu>
               {monitoring.map((item, i) => (
-                <SidebarMenuItem key={i}>
-                  <SidebarMenuButton
-                    asChild
-                    className={`hover:bg-primary/10 hover:text-primary dark:hover:bg-slate-900 ${
-                      pathname === item.href
-                        ? "bg-primary/10 text-primary hover:bg-primary/10 hover:text-primary dark:bg-slate-800"
-                        : ""
-                    }`}
-                  >
-                    <Link href={item.href}>
-                      {item.icon}
-                      <span>{item.name}</span>
-                    </Link>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
-        <SidebarGroup>
-          <SidebarGroupLabel>Riwayat Data</SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              {history.map((item, i) => (
                 <SidebarMenuItem key={i}>
                   <SidebarMenuButton
                     asChild
